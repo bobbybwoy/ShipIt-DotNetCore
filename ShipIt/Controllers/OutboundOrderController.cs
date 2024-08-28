@@ -101,6 +101,7 @@ namespace ShipIt.Controllers
             _stockRepository.RemoveStock(request.WarehouseId, lineItems);
 
             // Return JSON string...?
-        }
+            Log.Info($"{NumOfTrucks} trucks needed for order.");
+        } 
     }
 }
