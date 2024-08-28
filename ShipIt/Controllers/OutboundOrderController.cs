@@ -43,6 +43,7 @@ namespace ShipIt.Controllers
             var lineItems = new List<StockAlteration>();
             var productIds = new List<int>();
             var errors = new List<string>();
+            double weight = 0;
 
             foreach (var orderLine in request.OrderLines)
             {
@@ -54,9 +55,13 @@ namespace ShipIt.Controllers
                 {
                     var product = products[orderLine.gtin];
                     lineItems.Add(new StockAlteration(product.Id, orderLine.quantity));
-                    productIds.Add(product.Id);
+                    productIds.Add(product.Id); 
+
+                    weight += product.Weight * orderLine.quantity;
                 }
             }
+
+            int NumOfTrucks = (int) Math.Ceiling(weight/2000);
 
             if (errors.Count > 0)
             {
@@ -94,6 +99,8 @@ namespace ShipIt.Controllers
             }
 
             _stockRepository.RemoveStock(request.WarehouseId, lineItems);
+
+            // Return JSON string...?
         }
     }
 }
