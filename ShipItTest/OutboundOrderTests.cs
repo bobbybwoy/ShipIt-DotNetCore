@@ -198,5 +198,54 @@ namespace ShipItTest
                 Assert.IsTrue(e.Message.Contains(GTIN));
             }
         }
+        
+        [Test]
+        public void TestOutboundOrderForOneTruck()
+        {
+            onSetUp();
+            stockRepository.AddStock(WAREHOUSE_ID, new List<StockAlteration>() { new StockAlteration(productId, 1000) });
+            var outboundOrder = new OutboundOrderRequestModel()
+            {
+                WarehouseId = WAREHOUSE_ID,
+                OrderLines = new List<OrderLine>()
+                {
+                    new OrderLine()
+                    {
+                        gtin = GTIN,
+                        quantity = 3
+                    }
+                }
+            };
+
+            OutboundOrderResponseModel response = outboundOrderController.Post(outboundOrder);
+
+            var stock = stockRepository.GetStockByWarehouseAndProductIds(WAREHOUSE_ID, new List<int>() { productId })[productId];
+            Assert.AreEqual(response.NumOfTrucks, 1);
+        }
+        
+        [Test]
+        public void TestOutboundOrderMoreThanOneTruck()
+        {
+            onSetUp();
+            stockRepository.AddStock(WAREHOUSE_ID, new List<StockAlteration>() { new StockAlteration(productId, 1000) });
+            var outboundOrder = new OutboundOrderRequestModel()
+            {
+                WarehouseId = WAREHOUSE_ID,
+                OrderLines = new List<OrderLine>()
+                {
+                    new OrderLine()
+                    {
+                        gtin = GTIN,
+                        quantity = 10
+                    }
+                }
+            };
+
+            OutboundOrderResponseModel response = outboundOrderController.Post(outboundOrder);
+
+            var stock = stockRepository.GetStockByWarehouseAndProductIds(WAREHOUSE_ID, new List<int>() { productId })[productId];
+            Assert.AreEqual(response.NumOfTrucks, 2);
+        }
+
     }
 }
