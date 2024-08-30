@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using Npgsql;
 using ShipIt.Models.ApiModels;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShipIt.Models.DataModels
 {
@@ -54,6 +55,7 @@ namespace ShipIt.Models.DataModels
 
     public class ProductDataModel : DataModel
     {
+        [Key]
         [DatabaseColumnName("p_id")]
         public int Id { get; set; }
 

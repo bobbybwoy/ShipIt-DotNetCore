@@ -1,0 +1,16 @@
+2024-08-29 11:23:33,085 [23] INFO  ShipIt.Controllers.InboundOrderController - orderIn for warehouseId: 0
+2024-08-29 11:23:33,572 [23] DEBUG ShipIt.Controllers.InboundOrderController - Found operations manager: name: Revere Laklyn, warehouseId: 0, role: OPERATIONS_MANAGER, ext: 96341
+2024-08-29 11:23:47,360 [23] DEBUG ShipIt.Controllers.InboundOrderController - Constructed order lines: System.Collections.Generic.Dictionary`2[ShipIt.Models.ApiModels.Company,System.Collections.Generic.List`1[ShipIt.Models.ApiModels.InboundOrderLine]]
+2024-08-29 11:23:47,361 [23] INFO  ShipIt.Controllers.InboundOrderController - Constructed inbound order
+2024-08-29 14:13:11,392 [10] INFO  ShipIt.Controllers.InboundOrderController - orderIn for warehouseId: 0
+2024-08-29 14:13:11,847 [10] DEBUG ShipIt.Controllers.InboundOrderController - Found operations manager: name: Revere Laklyn, warehouseId: 0, role: OPERATIONS_MANAGER, ext: 96341
+2024-08-29 14:13:18,085 [10] DEBUG ShipIt.Controllers.InboundOrderController - Constructed order lines: System.Collections.Generic.Dictionary`2[ShipIt.Models.ApiModels.Company,System.Collections.Generic.List`1[ShipIt.Models.ApiModels.InboundOrderLine]]
+2024-08-29 14:13:18,086 [10] INFO  ShipIt.Controllers.InboundOrderController - Constructed inbound order
+2024-08-29 14:18:57,619 [18] INFO  ShipIt.Controllers.InboundOrderController - orderIn for warehouseId: 0
+2024-08-29 14:18:57,678 [18] DEBUG ShipIt.Controllers.InboundOrderController - Found operations manager: name: Revere Laklyn, warehouseId: 0, role: OPERATIONS_MANAGER, ext: 96341
+2024-08-29 14:19:03,533 [18] DEBUG ShipIt.Controllers.InboundOrderController - Constructed order lines: System.Collections.Generic.Dictionary`2[ShipIt.Models.ApiModels.Company,System.Collections.Generic.List`1[ShipIt.Models.ApiModels.InboundOrderLine]]
+2024-08-29 14:19:03,534 [18] INFO  ShipIt.Controllers.InboundOrderController - Constructed inbound order
+2024-08-29 14:21:28,439 [7] INFO  ShipIt.Controllers.InboundOrderController - orderIn for warehouseId: 0
+2024-08-29 14:21:28,441 [7] DEBUG ShipIt.Controllers.InboundOrderController - Found operations manager: name: Revere Laklyn, warehouseId: 0, role: OPERATIONS_MANAGER, ext: 96341
+2024-08-29 14:21:34,279 [7] DEBUG ShipIt.Controllers.InboundOrderController - Constructed order lines: System.Collections.Generic.Dictionary`2[ShipIt.Models.ApiModels.Company,System.Collections.Generic.List`1[ShipIt.Models.ApiModels.InboundOrderLine]]
+2024-08-29 14:21:34,280 [7] INFO  ShipIt.Controllers.InboundOrderController - Constructed inbound order

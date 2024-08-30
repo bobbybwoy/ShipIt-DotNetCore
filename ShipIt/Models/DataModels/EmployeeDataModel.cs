@@ -1,9 +1,12 @@
 ﻿﻿using System;
 using System.Data;
 using ShipIt.Models.ApiModels;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace ShipIt.Models.DataModels
 {
+    // [Index(nameof(WarehouseId), nameof(Role))]
     public class EmployeeDataModel : DataModel
     {
         [DatabaseColumnName("name")]

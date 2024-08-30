@@ -23,7 +23,7 @@ namespace ShipIt.Controllers
         }
 
         [HttpPost("")]
-        public void Post([FromBody] OutboundOrderRequestModel request)
+        public OutboundOrderResponseModel Post([FromBody] OutboundOrderRequestModel request)
         {
             Log.Info(String.Format("Processing outbound order: {0}", request));
 
@@ -61,7 +61,7 @@ namespace ShipIt.Controllers
                 }
             }
 
-            int NumOfTrucks = (int) Math.Ceiling(weight/2000);
+            int numOfTrucks = (int) Math.Ceiling(weight/2000);
 
             if (errors.Count > 0)
             {
@@ -100,8 +100,8 @@ namespace ShipIt.Controllers
 
             _stockRepository.RemoveStock(request.WarehouseId, lineItems);
 
-            // Return JSON string...?
-            Log.Info($"{NumOfTrucks} trucks needed for order.");
+            Log.Info($"{numOfTrucks} trucks needed for order.");
+            return new OutboundOrderResponseModel(numOfTrucks);
         } 
     }
 }
