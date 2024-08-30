@@ -3,12 +3,14 @@ using System.Data;
 using ShipIt.Models.ApiModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System.ComponentModel.DataAnnotations;
 
 namespace ShipIt.Models.DataModels
 {
     // [Index(nameof(WarehouseId), nameof(Role))]
     public class EmployeeDataModel : DataModel
-    {
+    {   [Key]
+        public int Id { get; set; }
         [DatabaseColumnName("name")]
         public string Name { get; set; }
         [DatabaseColumnName("w_id")]
